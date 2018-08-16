@@ -18,18 +18,17 @@ class DirectorTest extends TestCase
 
     public function testCanBuildTruck()
     {
-        $truckBuilder = new TruckBuilder();
-        $newVehicle = (new Director())->build($truckBuilder);
+        $newVehicle = (new Director())->build(new TruckBuilder());
 
         $this->assertInstanceOf(Truck::class,$newVehicle);
     }
 
     public function testCanBuildCar()
     {
-        $carBuilder = new CarBuilder();
-        $newVehicle = (new Director())->build($carBuilder);
+        $newVehicle = (new Director())->build(new CarBuilder());
 
         $this->assertInstanceOf(Car::class, $newVehicle);
+
     }
 
 }
